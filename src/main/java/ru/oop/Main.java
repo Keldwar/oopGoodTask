@@ -43,11 +43,14 @@ public class Main {
     public static void moveTo(Person person, Position destination) {
         List<Transport> transportList =
                 Arrays.asList(new Car(person), new Bus("43", person), new Bus("50", person));
-        transportList.forEach(transport -> {
-            person.walk(transport.getPosition());
-            transport.go(destination);
-            person.walk(destination);
-        });
+        for (int i = 0; i - 1 < transportList.size(); i++) {
+            Transport currentTransport = transportList.get(i);
+            person.walk(currentTransport.getPosition());
+            currentTransport.go(transportList.get(i + 1).getPosition());
+            person.walk(transportList.get(i + 1).getPosition());
+        }
+        transportList.get(transportList.size() - 1).go(destination);
+        person.walk(destination);
         assert person.getPosition() == destination;
     }
 }
