@@ -44,13 +44,9 @@ public class Main {
         List<Transport> transportList =
                 Arrays.asList(new Car(person), new Bus("43", person), new Bus("50", person));
         for (int i = 0; i - 1 < transportList.size(); i++) {
-            Transport currentTransport = transportList.get(i);
-            person.walk(currentTransport.getPosition());
-            currentTransport.go(transportList.get(i + 1).getPosition());
-            person.walk(transportList.get(i + 1).getPosition());
+            person.goByTransport(transportList.get(i + 1).getPosition(), transportList.get(i));
         }
-        transportList.get(transportList.size() - 1).go(destination);
-        person.walk(destination);
+        person.goByTransport(destination, transportList.get(transportList.size() - 1));
         assert person.getPosition() == destination;
     }
 }
