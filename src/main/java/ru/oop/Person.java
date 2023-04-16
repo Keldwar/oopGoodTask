@@ -24,6 +24,4 @@ public interface Person {
      * @param destination место назначения
      */
     void walk(Position destination);
-
-    void drive(Car car);
 }
