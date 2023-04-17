@@ -1,6 +1,9 @@
 package ru.oop;
 
 public class Bus implements Transport {
+    public Bus(Person person) {
+    }
+
     @Override
     public Position getPosition() {
         return null;

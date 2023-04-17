@@ -38,7 +38,7 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        Transport bus = new Bus();
+        Transport bus = new Bus(person);
         person.walk(bus.getPosition());
         bus.go(destination);
         person.walk(destination);
