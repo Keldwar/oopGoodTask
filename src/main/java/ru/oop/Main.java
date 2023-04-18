@@ -1,6 +1,5 @@
 package ru.oop;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -40,13 +39,10 @@ public class Main {
      * Переехать из текущего места в заданную точку
      * на любом, заранее определённом транспорте
      */
-    public static void moveTo(Person person, Position destination) {
-        List<Transport> transportList =
-                Arrays.asList(new Car(), new Bus("43"), new Bus("50"));
-        for (int i = 0; i < transportList.size() - 1; i++) {
-            person.goByTransport(transportList.get(i + 1).getPosition(), transportList.get(i));
+    public static void moveTo(Person person, Position destination, List<Transport> transportList) {
+        for (int i = 0; i < transportList.size(); i++) {
+            person.goByTransport(destination, transportList.get(i));
         }
-        person.goByTransport(destination, transportList.get(transportList.size() - 1));
         assert person.getPosition() == destination;
     }
 }
