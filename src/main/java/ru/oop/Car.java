@@ -1,7 +1,7 @@
 package ru.oop;
 
 public class Car implements Transport {
-    public Car(Person person) {
+    public Car() {
     }
 
     @Override

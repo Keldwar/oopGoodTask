@@ -1,7 +1,7 @@
 package ru.oop;
 
 public class Bus implements Transport {
-    public Bus(String s, Person person) {
+    public Bus(String s) {
 
     }
 

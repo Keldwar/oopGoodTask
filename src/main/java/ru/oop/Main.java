@@ -42,8 +42,8 @@ public class Main {
      */
     public static void moveTo(Person person, Position destination) {
         List<Transport> transportList =
-                Arrays.asList(new Car(person), new Bus("43", person), new Bus("50", person));
-        for (int i = 0; i - 1 < transportList.size(); i++) {
+                Arrays.asList(new Car(), new Bus("43"), new Bus("50"));
+        for (int i = 0; i < transportList.size() - 1; i++) {
             person.goByTransport(transportList.get(i + 1).getPosition(), transportList.get(i));
         }
         person.goByTransport(destination, transportList.get(transportList.size() - 1));
